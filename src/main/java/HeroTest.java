@@ -8,7 +8,13 @@ class Hero {
 
     public Hero (String name, int hp) {
         this.name = name;
-        this.hp = hp;
+        if (hp < 0) {
+            this.hp = 0;
+        } else if (hp > 200) {
+            this.hp = 200;
+        } else {
+            this.hp = hp;
+        }
     }
 
     public String getName() {
@@ -33,5 +39,8 @@ class HeroTest {
         System.out.println(hero.getName());
         //Expect 50
         System.out.println(hero.getHp());
+
+        System.out.println(new Hero("Stranger", 250).getHp()); //200
+        System.out.println(new Hero("Stranger", -71).getHp()); //0
     }
 }
