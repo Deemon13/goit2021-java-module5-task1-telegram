@@ -43,10 +43,18 @@ class Level {
         }
     }
 
+    public int calculateLevelHash() {
+        int sumHash = 0;
+        for (int i = 0; i < points.length; i++) {
+            int mPoint = points[i].getX() * points[i].getY();
+            sumHash += mPoint;
+        }return sumHash;
+    }
+
     @Override
     public String toString() {
         // Quarke level, name is <LEVEL_NAME>, difficulty is <DIFFICULTY>, point count is <POINT_COUNT>
-        return "Quarke level, name is " + this.levelInfo.name + ", difficulty is " + this.levelInfo.difficulty + ", point count is " + points.length;
+        return "Quarke level, name is " + levelInfo.name + ", difficulty is " + levelInfo.difficulty + ", point count is " + points.length;
     }
 }
 
@@ -68,5 +76,8 @@ class LevelTest {
 
         //Quarke level, name is Quarke Intro, difficulty is Easy, point count is 3
         System.out.println(new Level(info, points));
+
+        //3015
+        System.out.println(new Level(info, points).calculateLevelHash());
     }
 }
