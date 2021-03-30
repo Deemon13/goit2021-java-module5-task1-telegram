@@ -3,7 +3,8 @@ class AIPlayer {
 
     public void setHp(int hp) {
         if (hp >= 0 && hp <= 100){
-            this.hp = hp;} else
+            this.hp = hp;
+        } else
             throw new IllegalArgumentException();
     }
 }

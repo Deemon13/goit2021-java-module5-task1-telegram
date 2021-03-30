@@ -1,8 +1,8 @@
-class Level {
+class LevelOld {
     private LevelInfo levelInfo;
     private Point[] points;
 
-    public Level(LevelInfo levelInfo, Point[] points) {
+    public LevelOld(LevelInfo levelInfo, Point[] points) {
         this.levelInfo = levelInfo;
         this.points = points;
     }
@@ -60,13 +60,13 @@ class Level {
 
 class LevelTest {
     public static void main(String[] args) {
-        Level.Point p1 = new Level.Point(3, 5);
-        Level.Point p2 = new Level.Point(10, 100);
-        Level.Point p3 = new Level.Point(50, 40);
+        LevelOld.Point p1 = new LevelOld.Point(3, 5);
+        LevelOld.Point p2 = new LevelOld.Point(10, 100);
+        LevelOld.Point p3 = new LevelOld.Point(50, 40);
 
-        Level.Point[] points = {p1, p2, p3};
+        LevelOld.Point[] points = {p1, p2, p3};
 
-        Level.LevelInfo info = new Level.LevelInfo("Quarke Intro", "Easy");
+        LevelOld.LevelInfo info = new LevelOld.LevelInfo("Quarke Intro", "Easy");
 
         //Quarke level, name is Test
         //System.out.println(new Level("Test"));
@@ -75,9 +75,9 @@ class LevelTest {
         //System.out.println(new Level("Test", points));
 
         //Quarke level, name is Quarke Intro, difficulty is Easy, point count is 3
-        System.out.println(new Level(info, points));
+        System.out.println(new LevelOld(info, points));
 
         //3015
-        System.out.println(new Level(info, points).calculateLevelHash());
+        System.out.println(new LevelOld(info, points).calculateLevelHash());
     }
 }
