@@ -1,4 +1,10 @@
 class LevelLoader {
+    static private LevelLoader instance = new LevelLoader();
+
+    static public LevelLoader getInstance() {
+        return LevelLoader.instance;
+    }
+
     String load(String levelName) {
         return "Loading level " + levelName + " ...";
     }
@@ -10,5 +16,8 @@ class LevelLoaderTest {
 
         //Loading level Startlevel ...
         System.out.println(levelLoader.load("StartLevel"));
+
+        //Loading level Startlevel ...
+        System.out.println(LevelLoader.getInstance().load("StartLevel"));
     }
 }
